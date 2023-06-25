@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0.8rem;
+}
+.logo {
+  font-size: 5.5rem;
+  color: #4494f4;
+}
+.title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-left: 0.4em;
+  color: #2684f7;
+  text-transform: uppercase;
+}
+form {
+  margin: 2.5em 1em;
+}
+.searchBar {
+  font-size: 1.2em;
+  padding: 0.4em;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 1px solid burlywood;
+  background: whitesmoke;
+  outline: none;
+}
+.searchBtn {
+  font-size: 1.2em;
+  padding: 0.4em;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 1px solid #4494f4;
+  background: #4494f4;
+  color: white;
+  cursor: pointer;
+}
+
+.searchBtn:hover {
+  background-color: #4f87cc;
+}
+.error {
+  display: none;
+  font-size: 6em;
+  text-align: center;
+}
+.container {
+  display: none;
+}
+.wordName {
+  display: flex;
+  gap: 0.7em;
+  margin: 1em;
+}
+.iconDiv {
+  width: 3em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2684f7;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.audioIcon {
+  color: white;
+  font-size: 1.5em;
+}
+.wordName span {
+  font-size: 2rem;
+  /* margin-left: 1em; */
+}
+.partOfSpeech {
+  margin-left: 0.5em;
+}
+
+.meaningSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  padding: 1em;
+}
+.synonymsDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+.synonymsDiv span {
+  color: green;
+  /* font-size: 1.2em; */
+  padding: 0.4em;
+}
+.synonym {
+  padding: 0.4em;
+  border: 1px solid rgb(201, 200, 200);
+  border-radius: 14%;
+  margin-right: 0.6em;
+  margin-bottom: 0.4em;
+}
+@media screen and (max-width: 550px) {
+  .title {
+    font-size: 2.3rem;
+  }
+  .logo {
+    font-size: 5rem;
+  }
+  .synonym {
+    padding: 0.25em;
+    border-radius: 9%;
+    margin-right: 0.4em;
+  }
+}
+@media screen and (max-width: 475px) {
+  .title {
+    font-size: 2rem;
+  }
+  .logo {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 340px) {
+  .searchBar {
+    font-size: 1em;
+  }
+  .searchBtn {
+    font-size: 1em;
+  }
+}
