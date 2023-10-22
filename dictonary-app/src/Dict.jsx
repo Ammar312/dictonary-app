@@ -18,7 +18,7 @@ const Dict = () => {
           // handle success
           console.log(response.data);
           // console.log(response.data[0].meanings[0].definitions[0].definition);
-          const wordName = response.data[0].word;
+          const wordName = response.data[0]?.word;
           let audio;
           if (
             response.data[0].phonetics[0].audio === "" &&
@@ -32,19 +32,19 @@ const Dict = () => {
           }
           // const audio1 = response.data[0].phonetics[1].audio;
 
-          const partOfSpeech = response.data[0].meanings[0].partOfSpeech;
+          const partOfSpeech = response.data[0]?.meanings[0]?.partOfSpeech;
           const meaning1 =
-            response.data[0].meanings[0].definitions[0].definition;
+            response.data[0]?.meanings[0]?.definitions[0]?.definition;
           const meaning2 =
-            response.data[0].meanings[0].definitions[1].definition;
-          const synonyms = response.data[0].meanings[0].synonyms;
-          const synonyms1 = response.data[0].meanings[1].synonyms;
+            response.data[0]?.meanings[0]?.definitions[1]?.definition;
+          const synonyms = response.data[0]?.meanings[0]?.synonyms;
+          const synonyms1 = response.data[0]?.meanings[1]?.synonyms;
           console.log(synonyms);
-          const partOfSpeech1 = response.data[0].meanings[1].partOfSpeech;
+          const partOfSpeech1 = response.data[0]?.meanings[1]?.partOfSpeech;
           const meaning1Verb =
-            response.data[0].meanings[1].definitions[0].definition;
+            response.data[0]?.meanings[1]?.definitions[0]?.definition;
           const meaning2Verb =
-            response.data[0].meanings[1].definitions[1].definition;
+            response.data[0]?.meanings[1]?.definitions[1]?.definition;
           setDict({
             wordName,
             audio,
@@ -107,8 +107,12 @@ const Dict = () => {
           <article>1.&nbsp; {dict.meaning1}</article>
           <article className="synonymsDiv">
             <span>Similar:</span>
-            {dict.synonyms?.map((syn) => {
-              return <div className="synonym">{syn}</div>;
+            {dict.synonyms?.map((syn, index) => {
+              return (
+                <div className="synonym" key={index}>
+                  {syn}
+                </div>
+              );
             })}
           </article>
           <article>2. &nbsp;{dict.meaning2}</article>
@@ -120,8 +124,12 @@ const Dict = () => {
           <article>1.&nbsp; {dict.meaning1Verb}</article>
           <article className="synonymsDiv">
             <span>Similar:</span>
-            {dict.synonyms1?.map((syn) => {
-              return <div className="synonym">{syn}</div>;
+            {dict.synonyms1?.map((syn, index) => {
+              return (
+                <div className="synonym" key={index}>
+                  {syn}
+                </div>
+              );
             })}
           </article>
           <article>2.&nbsp; {dict.meaning2Verb}</article>
