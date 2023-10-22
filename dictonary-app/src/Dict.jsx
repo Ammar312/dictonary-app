@@ -85,7 +85,7 @@ const Dict = () => {
       <section className="error">404</section>
       <section className="container">
         <div className="wordName">
-          {audio && (
+          {dict.audio && (
             <div className="iconDiv">
               <i
                 className="fa-solid fa-volume-high audioIcon"
